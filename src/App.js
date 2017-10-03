@@ -1,21 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Main from './components/Main';
+import Splash from './components/Splash';
 import './App.css';
+import { connect } from 'react-redux';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      splash: true
+    };
+
+    setTimeout(() => {
+      this.setState({
+        splash: false
+      })
+    }, 3200)
+  }
+
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+
+    const content = (this.state.splash)
+        ? <Splash />
+        : (<div className="Notes">
+            <header className="Notes__header"></header>
+            <Main />
+          </div>);
+
+    return content;
   }
 }
 
-export default App;
+export default connect(
+  state => ({
+    testStore: state
+  }),
+  dispatch => ({})
+)(App);

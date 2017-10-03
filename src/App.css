@@ -1,24 +1,8 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700,900&subset=cyrillic-ext");
+@import url("//fonts.googleapis.com/css?family=Rancho");
+.Notes {
+  width: 100%;
+  background-image: url("images/notes-background.png");
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px; }

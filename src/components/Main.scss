@@ -1,0 +1,14 @@
+.Notes {
+  &__main {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 80vw;
+    min-height: 800px;
+    width: 80%;
+    background: #fff;
+    border-radius: 5px;
+    padding-top: 150px;
+    box-shadow: 0 4px 64px rgba(22, 27, 33, 0.25);
+	display: flex;
+  }
+}

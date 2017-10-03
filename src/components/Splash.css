@@ -1,0 +1,25 @@
+.Note__splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(137.72deg, #FF512F -13.16%, #DD2476 127.11%); }
+
+.Note__logo {
+  font-family: Rancho, sans-serif;
+  color: #fff;
+  font-size: 144px;
+  animation: size 3s linear forwards;
+  margin: 0; }
+  .Note__logo_sup {
+    font-size: 36px;
+    position: absolute;
+    left: -30px;
+    top: 26px; }
+
+@keyframes size {
+  from {
+    transform: scale(0.8); }
+  to {
+    transform: scale(1); } }

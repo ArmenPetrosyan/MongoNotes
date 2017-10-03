@@ -1,0 +1,53 @@
+.Editor {
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 20px;
+  padding: 20px 80px 20px 20px; }
+  .Editor__header {
+    font-size: 36px;
+    font-weight: 700;
+    color: #031151;
+    outline: none;
+    border: none;
+    width: 100%; }
+  .Editor__main {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #141A25;
+    line-height: 23px; }
+  .Editor__save {
+    font-family: Roboto, sans-serif;
+    margin-top: 60px;
+    font-size: 14px;
+    color: #eb496d;
+    background: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #eb496d;
+    padding: 6px 40px;
+    border-radius: 10px; }
+    .Editor__save:hover {
+      color: #0d64da; }
+    .Editor__save:active {
+      color: #031151; }
+  .Editor__settings {
+    display: flex;
+    margin-bottom: 20px;
+    padding-left: 5px; }
+  .Editor__control {
+    color: #4676AA;
+    cursor: pointer;
+    margin-right: 7px; }
+    .Editor__control_bold {
+      font-weight: 700; }
+    .Editor__control_italic {
+      font-style: italic; }
+    .Editor__control_underline {
+      text-decoration: underline; }
+    .Editor__control:hover {
+      color: #0e81ff; }
+  .Editor__content {
+    padding: 10px 10px;
+    width: 100%;
+    background: rgba(175, 213, 255, 0.13); }

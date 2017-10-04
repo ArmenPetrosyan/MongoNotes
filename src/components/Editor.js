@@ -8,6 +8,8 @@ import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 
 import notesStore from '../store/notesStore';
+import { connect } from 'react-redux';
+
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import './Editor.css';
@@ -26,18 +28,21 @@ class Editor extends Component {
       const cnt = notesStore.getState().active.content;
       if(cnt) {
         const contentBlock = htmlToDraft(cnt);
-        console.log(444,contentBlock)
 
         if (contentBlock) {
           const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
           const editorState = EditorState.createWithContent(contentState);
-          console.log(5555,editorState)
           this.setState({
             editorState
           })
         }
-
       }
+
+      console.log('SUBSCRIBED')
+
+      this.setState({
+        title: notesStore.getState().active.title
+      });
     })
   }
 
@@ -49,15 +54,25 @@ class Editor extends Component {
 
   onSaveHandler = () => {
     const content = draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()));
-
-    notesStore.dispatch({
-      type: 'ADD_NOTE',
-      payload: {
-        title: this.state.title,
-        content: content,
-        created: new Date()
-      }
-    });
+    if(this.props.notesStore.active.id) {
+      notesStore.dispatch({
+        type: 'UPDATE_NOTE',
+        payload: {
+          id: this.props.notesStore.active.id,
+          title: this.state.title,
+          content: content
+        }
+      });
+    } else {
+      notesStore.dispatch({
+        type: 'ADD_NOTE',
+        payload: {
+          title: this.state.title,
+          content: content,
+          created: new Date()
+        }
+      });
+    }
   };
 
   onTitleChangeHandler = (event) => {
@@ -74,6 +89,7 @@ class Editor extends Component {
       <section className="Editor">
         <input
           type="text"
+          placeholder="Enter note title"
           className="Editor__header"
           value={this.state.title || this.props.active.title}
           onChange={this.onTitleChangeHandler}
@@ -129,4 +145,9 @@ Editor.defaultProps = {
     )
 };
 
-export default Editor;
+export default connect(
+  state => ({
+    notesStore: state
+  }),
+  dispatch => ({})
+)(Editor);

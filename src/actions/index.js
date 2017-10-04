@@ -10,7 +10,10 @@ export const fetchNotes = () => {
             notes: notes
           }
         })
-      );
+      )
+      .catch((error) => dispatch({
+        type: 'ERROR_RECEIVED_NOTES'
+      }));
   };
 };
 

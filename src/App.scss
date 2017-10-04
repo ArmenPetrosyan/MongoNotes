@@ -1,11 +1,25 @@
 @import url('//fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700,900&subset=cyrillic-ext');
 @import url('//fonts.googleapis.com/css?family=Rancho');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 .Notes {
-//  height: 100vh;
   width: 100%;
-  background-image: url('images/notes-background.png');
+  background-image: url('images/BG.png');
   background-size: cover;
-  padding-top: 100px;
+  //padding-top: 100px;
   padding-bottom: 100px;
+
+  &__header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &__logo {
+    width: 139px;
+    margin-left: 10%;
+  }
+}
+
+.hidden {
+  display: none;
 }

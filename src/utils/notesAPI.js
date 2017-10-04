@@ -12,17 +12,20 @@ export function addNote(data) {
       "created": data.created
     })
   }).then(function(response) {
-    // console.log(response.json());
+    return response.json();
+  }).then(function(json){
+    console.log('added', json)
   });
 }
 
-export const getAllNotes = async() => {
-  const resp =  await fetch('http://localhost:8080/notes');
-  const json =  await resp.json();
-  return json;
-};
-
-
-export function getNoteByTitle(title) {
-
+export function updateNote(id, note) {
+  fetch(`http://localhost:8080/notes/${id}`,{
+    method:'PUT',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(note)
+  }).then(function(response) {
+    console.log('Updated: ',response.json());
+  });
 }

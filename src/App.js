@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Main from './components/Main';
 import Splash from './components/Splash';
 import './App.css';
+import logo from './images/logo.png';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -9,14 +10,14 @@ class App extends Component {
     super();
 
     this.state = {
-      splash: true
+      splash: false
     };
 
     setTimeout(() => {
       this.setState({
         splash: false
       })
-    }, 3200)
+    }, 3500)
   }
 
   render() {
@@ -24,7 +25,9 @@ class App extends Component {
     const content = (this.state.splash)
         ? <Splash />
         : (<div className="Notes">
-            <header className="Notes__header"></header>
+            <header className="Notes__header">
+              <img className="Notes__logo" src={logo} alt=""/>
+            </header>
             <Main />
           </div>);
 

@@ -4,7 +4,10 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(137.72deg, #FF512F -13.16%, #DD2476 127.11%); }
+  background: url("../images/enote.png") no-repeat, linear-gradient(137.72deg, #FF512F -13.16%, #DD2476 127.11%);
+  background-size: 500px auto, 100%;
+  background-position: 50% 100%, 0 0;
+  animation: enote 3s ease-in-out forwards; }
 
 .Note__logo {
   font-family: Rancho, sans-serif;
@@ -13,13 +16,20 @@
   animation: size 3s linear forwards;
   margin: 0; }
   .Note__logo_sup {
-    font-size: 36px;
+    font-size: 29px;
     position: absolute;
-    left: -30px;
-    top: 26px; }
+    left: -32px;
+    top: 27px;
+    font-weight: 400; }
 
 @keyframes size {
   from {
-    transform: scale(0.8); }
+    transform: scale(0.9); }
   to {
     transform: scale(1); } }
+
+@keyframes enote {
+  from {
+    background-position: 50% 120%, 0 0; }
+  to {
+    background-position: 50% 100%, 0 0; } }
